@@ -65,12 +65,12 @@ const Navbar = () => {
               menuOpen ? "flex mt-4 md:mt-0" : "hidden md:flex"
             }`}
           >
-            <Link to="/" className="md:mr-5 hover:text-blue-600 py-2 md:py-0 text-center font-medium">
-              Home
-            </Link>
             
             {user && (
               <>
+                <Link to="/" className="md:mr-5 hover:text-blue-600 py-2 md:py-0 text-center font-medium">
+              Home
+            </Link>
                 <Link to="/create-resume" className="md:mr-5 hover:text-blue-600 py-2 md:py-0 text-center font-medium">
                   Create Resume
                 </Link>
