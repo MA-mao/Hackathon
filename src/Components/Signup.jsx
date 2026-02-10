@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from "react-router-dom";
 import { auth } from '../firebase';
 import Swal from 'sweetalert2';
 
@@ -8,6 +9,8 @@ export default function Signup({ onClose, onSwitchToLogin }) {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -43,7 +46,8 @@ export default function Signup({ onClose, onSwitchToLogin }) {
       });
       
       if (onClose) onClose();
-      window.location.href = '/create-resume';
+      navigate("/create-resume");
+
       
     } catch (error) {
       Swal.fire({
